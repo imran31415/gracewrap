@@ -15,6 +15,9 @@ type Config struct {
 	DrainTimeout time.Duration
 	// Hard stop timeout after drain ends (acts as a final safety deadline).
 	HardStopTimeout time.Duration
+	// How long to wait for load balancers/service mesh to notice readiness change.
+	// This prevents race conditions where new traffic is routed during shutdown.
+	LoadBalancerDelay time.Duration
 	// Optional logger (fallback to std log)
 	Logger *log.Logger
 	// Optional Prometheus registry for metrics
@@ -30,6 +33,7 @@ func DefaultConfig() Config {
 	return Config{
 		DrainTimeout:       25 * time.Second,
 		HardStopTimeout:    5 * time.Second,
+		LoadBalancerDelay:  1 * time.Second,
 		EnableMetrics:      false,
 		PrometheusRegistry: nil,
 		PrometheusGatherer: nil,
@@ -51,6 +55,13 @@ func ConfigFromEnv() Config {
 	if val := os.Getenv("HARD_STOP_TIMEOUT_SECONDS"); val != "" {
 		if seconds, err := strconv.Atoi(val); err == nil && seconds > 0 {
 			cfg.HardStopTimeout = time.Duration(seconds) * time.Second
+		}
+	}
+
+	// Parse LOAD_BALANCER_DELAY_SECONDS
+	if val := os.Getenv("LOAD_BALANCER_DELAY_SECONDS"); val != "" {
+		if seconds, err := strconv.Atoi(val); err == nil && seconds >= 0 {
+			cfg.LoadBalancerDelay = time.Duration(seconds) * time.Second
 		}
 	}
 

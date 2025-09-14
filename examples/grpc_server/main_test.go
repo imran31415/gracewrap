@@ -5,7 +5,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/arsheenali/gracewrap"
+	"github.com/imran31415/gracewrap"
 )
 
 func TestGRPCServerExample(t *testing.T) {

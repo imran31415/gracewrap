@@ -1,0 +1,528 @@
+🎯 Running Kubernetes in-flight request protection proof...
+cd proof_tests && go test -v -run TestKubernetesInFlightRequestProof
+=== RUN   TestKubernetesInFlightRequestProof
+    kubernetes_inflight_proof_test.go:23: 🎯 COMPREHENSIVE KUBERNETES IN-FLIGHT REQUEST PROTECTION PROOF
+    kubernetes_inflight_proof_test.go:24: This test proves GraceWrap prevents request failures during pod termination
+    kubernetes_inflight_proof_test.go:25: Using large sample size for statistical significance
+    kubernetes_inflight_proof_test.go:26: 
+=== RUN   TestKubernetesInFlightRequestProof/Quick_Requests_Large_Sample_Without_GraceWrap
+    kubernetes_inflight_proof_test.go:57: 📊 Testing 200 quick requests (300ms each) WITHOUT GraceWrap
+    kubernetes_inflight_proof_test.go:101: 🚀 NO-GRACE: Request 1 started processing
+    kubernetes_inflight_proof_test.go:101: 🚀 NO-GRACE: Request 2 started processing
+    kubernetes_inflight_proof_test.go:101: 🚀 NO-GRACE: Request 3 started processing
+    kubernetes_inflight_proof_test.go:101: 🚀 NO-GRACE: Request 4 started processing
+    kubernetes_inflight_proof_test.go:101: 🚀 NO-GRACE: Request 5 started processing
+    kubernetes_inflight_proof_test.go:101: 🚀 NO-GRACE: Request 6 started processing
+    kubernetes_inflight_proof_test.go:101: 🚀 NO-GRACE: Request 7 started processing
+    kubernetes_inflight_proof_test.go:101: 🚀 NO-GRACE: Request 8 started processing
+    kubernetes_inflight_proof_test.go:101: 🚀 NO-GRACE: Request 9 started processing
+    kubernetes_inflight_proof_test.go:101: 🚀 NO-GRACE: Request 10 started processing
+    kubernetes_inflight_proof_test.go:101: 🚀 NO-GRACE: Request 11 started processing
+    kubernetes_inflight_proof_test.go:101: 🚀 NO-GRACE: Request 21 started processing
+    kubernetes_inflight_proof_test.go:123: ✅ NO-GRACE: Request 1 completed successfully
+    kubernetes_inflight_proof_test.go:260: ✅ NO-GRACE: Client request 0 SUCCESS: 74 bytes
+    kubernetes_inflight_proof_test.go:123: ✅ NO-GRACE: Request 2 completed successfully
+    kubernetes_inflight_proof_test.go:260: ✅ NO-GRACE: Client request 1 SUCCESS: 74 bytes
+    kubernetes_inflight_proof_test.go:123: ✅ NO-GRACE: Request 3 completed successfully
+    kubernetes_inflight_proof_test.go:260: ✅ NO-GRACE: Client request 2 SUCCESS: 74 bytes
+    kubernetes_inflight_proof_test.go:123: ✅ NO-GRACE: Request 4 completed successfully
+    kubernetes_inflight_proof_test.go:260: ✅ NO-GRACE: Client request 3 SUCCESS: 74 bytes
+    kubernetes_inflight_proof_test.go:123: ✅ NO-GRACE: Request 5 completed successfully
+    kubernetes_inflight_proof_test.go:260: ✅ NO-GRACE: Client request 4 SUCCESS: 74 bytes
+    kubernetes_inflight_proof_test.go:123: ✅ NO-GRACE: Request 6 completed successfully
+    kubernetes_inflight_proof_test.go:260: ✅ NO-GRACE: Client request 5 SUCCESS: 74 bytes
+    kubernetes_inflight_proof_test.go:123: ✅ NO-GRACE: Request 7 completed successfully
+    kubernetes_inflight_proof_test.go:260: ✅ NO-GRACE: Client request 6 SUCCESS: 74 bytes
+    kubernetes_inflight_proof_test.go:123: ✅ NO-GRACE: Request 8 completed successfully
+    kubernetes_inflight_proof_test.go:260: ✅ NO-GRACE: Client request 7 SUCCESS: 74 bytes
+    kubernetes_inflight_proof_test.go:101: 🚀 NO-GRACE: Request 31 started processing
+    kubernetes_inflight_proof_test.go:123: ✅ NO-GRACE: Request 9 completed successfully
+    kubernetes_inflight_proof_test.go:260: ✅ NO-GRACE: Client request 8 SUCCESS: 74 bytes
+    kubernetes_inflight_proof_test.go:123: ✅ NO-GRACE: Request 10 completed successfully
+    kubernetes_inflight_proof_test.go:260: ✅ NO-GRACE: Client request 9 SUCCESS: 75 bytes
+    kubernetes_inflight_proof_test.go:123: ✅ NO-GRACE: Request 11 completed successfully
+    kubernetes_inflight_proof_test.go:260: ✅ NO-GRACE: Client request 10 SUCCESS: 75 bytes
+    kubernetes_inflight_proof_test.go:101: 🚀 NO-GRACE: Request 41 started processing
+    kubernetes_inflight_proof_test.go:123: ✅ NO-GRACE: Request 21 completed successfully
+    kubernetes_inflight_proof_test.go:260: ✅ NO-GRACE: Client request 20 SUCCESS: 75 bytes
+    kubernetes_inflight_proof_test.go:101: 🚀 NO-GRACE: Request 51 started processing
+    kubernetes_inflight_proof_test.go:123: ✅ NO-GRACE: Request 31 completed successfully
+    kubernetes_inflight_proof_test.go:260: ✅ NO-GRACE: Client request 30 SUCCESS: 75 bytes
+    kubernetes_inflight_proof_test.go:101: 🚀 NO-GRACE: Request 61 started processing
+    kubernetes_inflight_proof_test.go:123: ✅ NO-GRACE: Request 41 completed successfully
+    kubernetes_inflight_proof_test.go:260: ✅ NO-GRACE: Client request 40 SUCCESS: 75 bytes
+    kubernetes_inflight_proof_test.go:101: 🚀 NO-GRACE: Request 71 started processing
+    kubernetes_inflight_proof_test.go:123: ✅ NO-GRACE: Request 51 completed successfully
+    kubernetes_inflight_proof_test.go:260: ✅ NO-GRACE: Client request 50 SUCCESS: 75 bytes
+    kubernetes_inflight_proof_test.go:101: 🚀 NO-GRACE: Request 81 started processing
+    kubernetes_inflight_proof_test.go:123: ✅ NO-GRACE: Request 61 completed successfully
+    kubernetes_inflight_proof_test.go:260: ✅ NO-GRACE: Client request 60 SUCCESS: 75 bytes
+    kubernetes_inflight_proof_test.go:101: 🚀 NO-GRACE: Request 91 started processing
+    kubernetes_inflight_proof_test.go:123: ✅ NO-GRACE: Request 71 completed successfully
+    kubernetes_inflight_proof_test.go:260: ✅ NO-GRACE: Client request 70 SUCCESS: 75 bytes
+    kubernetes_inflight_proof_test.go:101: 🚀 NO-GRACE: Request 101 started processing
+    kubernetes_inflight_proof_test.go:123: ✅ NO-GRACE: Request 81 completed successfully
+    kubernetes_inflight_proof_test.go:260: ✅ NO-GRACE: Client request 80 SUCCESS: 75 bytes
+    kubernetes_inflight_proof_test.go:101: 🚀 NO-GRACE: Request 111 started processing
+    kubernetes_inflight_proof_test.go:123: ✅ NO-GRACE: Request 91 completed successfully
+    kubernetes_inflight_proof_test.go:260: ✅ NO-GRACE: Client request 90 SUCCESS: 75 bytes
+    kubernetes_inflight_proof_test.go:101: 🚀 NO-GRACE: Request 121 started processing
+    kubernetes_inflight_proof_test.go:123: ✅ NO-GRACE: Request 101 completed successfully
+    kubernetes_inflight_proof_test.go:260: ✅ NO-GRACE: Client request 100 SUCCESS: 76 bytes
+    kubernetes_inflight_proof_test.go:101: 🚀 NO-GRACE: Request 131 started processing
+    kubernetes_inflight_proof_test.go:123: ✅ NO-GRACE: Request 111 completed successfully
+    kubernetes_inflight_proof_test.go:260: ✅ NO-GRACE: Client request 110 SUCCESS: 76 bytes
+    kubernetes_inflight_proof_test.go:101: 🚀 NO-GRACE: Request 141 started processing
+    kubernetes_inflight_proof_test.go:123: ✅ NO-GRACE: Request 121 completed successfully
+    kubernetes_inflight_proof_test.go:260: ✅ NO-GRACE: Client request 120 SUCCESS: 76 bytes
+    kubernetes_inflight_proof_test.go:101: 🚀 NO-GRACE: Request 151 started processing
+    kubernetes_inflight_proof_test.go:123: ✅ NO-GRACE: Request 131 completed successfully
+    kubernetes_inflight_proof_test.go:260: ✅ NO-GRACE: Client request 130 SUCCESS: 76 bytes
+    kubernetes_inflight_proof_test.go:101: 🚀 NO-GRACE: Request 161 started processing
+    kubernetes_inflight_proof_test.go:123: ✅ NO-GRACE: Request 141 completed successfully
+    kubernetes_inflight_proof_test.go:260: ✅ NO-GRACE: Client request 140 SUCCESS: 76 bytes
+    kubernetes_inflight_proof_test.go:101: 🚀 NO-GRACE: Request 171 started processing
+    kubernetes_inflight_proof_test.go:123: ✅ NO-GRACE: Request 151 completed successfully
+    kubernetes_inflight_proof_test.go:260: ✅ NO-GRACE: Client request 150 SUCCESS: 76 bytes
+    kubernetes_inflight_proof_test.go:101: 🚀 NO-GRACE: Request 181 started processing
+    kubernetes_inflight_proof_test.go:123: ✅ NO-GRACE: Request 161 completed successfully
+    kubernetes_inflight_proof_test.go:260: ✅ NO-GRACE: Client request 160 SUCCESS: 76 bytes
+    kubernetes_inflight_proof_test.go:101: 🚀 NO-GRACE: Request 191 started processing
+    kubernetes_inflight_proof_test.go:123: ✅ NO-GRACE: Request 171 completed successfully
+    kubernetes_inflight_proof_test.go:260: ✅ NO-GRACE: Client request 170 SUCCESS: 76 bytes
+    kubernetes_inflight_proof_test.go:123: ✅ NO-GRACE: Request 181 completed successfully
+    kubernetes_inflight_proof_test.go:260: ✅ NO-GRACE: Client request 180 SUCCESS: 76 bytes
+    kubernetes_inflight_proof_test.go:210: ⚡ NO-GRACE: Simulating Kubernetes SIGKILL with ~100 requests in-flight
+    kubernetes_inflight_proof_test.go:216: 💀 NO-GRACE: Process terminated by SIGKILL
+    kubernetes_inflight_proof_test.go:242: 💀 NO-GRACE: Client request 194 FAILED: Get "http://127.0.0.1:62178/inflight-request-194": EOF
+    kubernetes_inflight_proof_test.go:242: 💀 NO-GRACE: Client request 197 FAILED: Get "http://127.0.0.1:62178/inflight-request-197": EOF
+    kubernetes_inflight_proof_test.go:242: 💀 NO-GRACE: Client request 189 FAILED: Get "http://127.0.0.1:62178/inflight-request-189": EOF
+    kubernetes_inflight_proof_test.go:242: 💀 NO-GRACE: Client request 199 FAILED: Get "http://127.0.0.1:62178/inflight-request-199": EOF
+    kubernetes_inflight_proof_test.go:242: 💀 NO-GRACE: Client request 198 FAILED: Get "http://127.0.0.1:62178/inflight-request-198": EOF
+    kubernetes_inflight_proof_test.go:242: 💀 NO-GRACE: Client request 192 FAILED: Get "http://127.0.0.1:62178/inflight-request-192": EOF
+    kubernetes_inflight_proof_test.go:242: 💀 NO-GRACE: Client request 193 FAILED: Get "http://127.0.0.1:62178/inflight-request-193": EOF
+    kubernetes_inflight_proof_test.go:242: 💀 NO-GRACE: Client request 190 FAILED: Get "http://127.0.0.1:62178/inflight-request-190": EOF
+    kubernetes_inflight_proof_test.go:242: 💀 NO-GRACE: Client request 195 FAILED: Get "http://127.0.0.1:62178/inflight-request-195": EOF
+    kubernetes_inflight_proof_test.go:242: 💀 NO-GRACE: Client request 196 FAILED: Get "http://127.0.0.1:62178/inflight-request-196": EOF
+    kubernetes_inflight_proof_test.go:242: 💀 NO-GRACE: Client request 191 FAILED: Get "http://127.0.0.1:62178/inflight-request-191": EOF
+    kubernetes_inflight_proof_test.go:61: ❌ WITHOUT GraceWrap (200 quick requests (300ms each)):
+    kubernetes_inflight_proof_test.go:62:    Requests started: 200
+    kubernetes_inflight_proof_test.go:63:    Requests completed: 190
+    kubernetes_inflight_proof_test.go:64:    Requests KILLED: 10
+    kubernetes_inflight_proof_test.go:65:    KILL RATE: 5.00%
+=== RUN   TestKubernetesInFlightRequestProof/Quick_Requests_Large_Sample_With_GraceWrap
+    kubernetes_inflight_proof_test.go:69: 📊 Testing 200 quick requests (300ms each) WITH GraceWrap
+[gracewrap] 2025/09/13 23:07:15.698984 HTTP server starting on 127.0.0.1:62381
+    kubernetes_inflight_proof_test.go:101: 🚀 GRACEFUL: Request 1 started processing
+    kubernetes_inflight_proof_test.go:101: 🚀 GRACEFUL: Request 2 started processing
+    kubernetes_inflight_proof_test.go:101: 🚀 GRACEFUL: Request 3 started processing
+    kubernetes_inflight_proof_test.go:101: 🚀 GRACEFUL: Request 4 started processing
+    kubernetes_inflight_proof_test.go:101: 🚀 GRACEFUL: Request 5 started processing
+    kubernetes_inflight_proof_test.go:101: 🚀 GRACEFUL: Request 6 started processing
+    kubernetes_inflight_proof_test.go:101: 🚀 GRACEFUL: Request 7 started processing
+    kubernetes_inflight_proof_test.go:101: 🚀 GRACEFUL: Request 8 started processing
+    kubernetes_inflight_proof_test.go:101: 🚀 GRACEFUL: Request 9 started processing
+    kubernetes_inflight_proof_test.go:101: 🚀 GRACEFUL: Request 10 started processing
+    kubernetes_inflight_proof_test.go:101: 🚀 GRACEFUL: Request 11 started processing
+    kubernetes_inflight_proof_test.go:101: 🚀 GRACEFUL: Request 21 started processing
+    kubernetes_inflight_proof_test.go:123: ✅ GRACEFUL: Request 1 completed successfully
+    kubernetes_inflight_proof_test.go:260: ✅ GRACEFUL: Client request 0 SUCCESS: 74 bytes
+    kubernetes_inflight_proof_test.go:123: ✅ GRACEFUL: Request 2 completed successfully
+    kubernetes_inflight_proof_test.go:260: ✅ GRACEFUL: Client request 1 SUCCESS: 74 bytes
+    kubernetes_inflight_proof_test.go:123: ✅ GRACEFUL: Request 3 completed successfully
+    kubernetes_inflight_proof_test.go:260: ✅ GRACEFUL: Client request 2 SUCCESS: 74 bytes
+    kubernetes_inflight_proof_test.go:123: ✅ GRACEFUL: Request 4 completed successfully
+    kubernetes_inflight_proof_test.go:260: ✅ GRACEFUL: Client request 3 SUCCESS: 74 bytes
+    kubernetes_inflight_proof_test.go:123: ✅ GRACEFUL: Request 5 completed successfully
+    kubernetes_inflight_proof_test.go:260: ✅ GRACEFUL: Client request 4 SUCCESS: 74 bytes
+    kubernetes_inflight_proof_test.go:123: ✅ GRACEFUL: Request 6 completed successfully
+    kubernetes_inflight_proof_test.go:260: ✅ GRACEFUL: Client request 5 SUCCESS: 74 bytes
+    kubernetes_inflight_proof_test.go:123: ✅ GRACEFUL: Request 7 completed successfully
+    kubernetes_inflight_proof_test.go:260: ✅ GRACEFUL: Client request 6 SUCCESS: 74 bytes
+    kubernetes_inflight_proof_test.go:123: ✅ GRACEFUL: Request 8 completed successfully
+    kubernetes_inflight_proof_test.go:260: ✅ GRACEFUL: Client request 7 SUCCESS: 74 bytes
+    kubernetes_inflight_proof_test.go:101: 🚀 GRACEFUL: Request 31 started processing
+    kubernetes_inflight_proof_test.go:123: ✅ GRACEFUL: Request 9 completed successfully
+    kubernetes_inflight_proof_test.go:260: ✅ GRACEFUL: Client request 8 SUCCESS: 74 bytes
+    kubernetes_inflight_proof_test.go:123: ✅ GRACEFUL: Request 10 completed successfully
+    kubernetes_inflight_proof_test.go:260: ✅ GRACEFUL: Client request 9 SUCCESS: 75 bytes
+    kubernetes_inflight_proof_test.go:123: ✅ GRACEFUL: Request 11 completed successfully
+    kubernetes_inflight_proof_test.go:260: ✅ GRACEFUL: Client request 10 SUCCESS: 75 bytes
+    kubernetes_inflight_proof_test.go:101: 🚀 GRACEFUL: Request 41 started processing
+    kubernetes_inflight_proof_test.go:123: ✅ GRACEFUL: Request 21 completed successfully
+    kubernetes_inflight_proof_test.go:260: ✅ GRACEFUL: Client request 20 SUCCESS: 75 bytes
+    kubernetes_inflight_proof_test.go:101: 🚀 GRACEFUL: Request 51 started processing
+    kubernetes_inflight_proof_test.go:123: ✅ GRACEFUL: Request 31 completed successfully
+    kubernetes_inflight_proof_test.go:260: ✅ GRACEFUL: Client request 30 SUCCESS: 75 bytes
+    kubernetes_inflight_proof_test.go:101: 🚀 GRACEFUL: Request 61 started processing
+    kubernetes_inflight_proof_test.go:123: ✅ GRACEFUL: Request 41 completed successfully
+    kubernetes_inflight_proof_test.go:260: ✅ GRACEFUL: Client request 40 SUCCESS: 75 bytes
+    kubernetes_inflight_proof_test.go:101: 🚀 GRACEFUL: Request 71 started processing
+    kubernetes_inflight_proof_test.go:123: ✅ GRACEFUL: Request 51 completed successfully
+    kubernetes_inflight_proof_test.go:260: ✅ GRACEFUL: Client request 50 SUCCESS: 75 bytes
+    kubernetes_inflight_proof_test.go:101: 🚀 GRACEFUL: Request 81 started processing
+    kubernetes_inflight_proof_test.go:123: ✅ GRACEFUL: Request 61 completed successfully
+    kubernetes_inflight_proof_test.go:260: ✅ GRACEFUL: Client request 60 SUCCESS: 75 bytes
+    kubernetes_inflight_proof_test.go:101: 🚀 GRACEFUL: Request 91 started processing
+    kubernetes_inflight_proof_test.go:123: ✅ GRACEFUL: Request 71 completed successfully
+    kubernetes_inflight_proof_test.go:260: ✅ GRACEFUL: Client request 70 SUCCESS: 75 bytes
+    kubernetes_inflight_proof_test.go:101: 🚀 GRACEFUL: Request 101 started processing
+    kubernetes_inflight_proof_test.go:123: ✅ GRACEFUL: Request 81 completed successfully
+    kubernetes_inflight_proof_test.go:260: ✅ GRACEFUL: Client request 80 SUCCESS: 75 bytes
+    kubernetes_inflight_proof_test.go:101: 🚀 GRACEFUL: Request 111 started processing
+    kubernetes_inflight_proof_test.go:123: ✅ GRACEFUL: Request 91 completed successfully
+    kubernetes_inflight_proof_test.go:260: ✅ GRACEFUL: Client request 90 SUCCESS: 75 bytes
+    kubernetes_inflight_proof_test.go:101: 🚀 GRACEFUL: Request 121 started processing
+    kubernetes_inflight_proof_test.go:123: ✅ GRACEFUL: Request 101 completed successfully
+    kubernetes_inflight_proof_test.go:260: ✅ GRACEFUL: Client request 100 SUCCESS: 76 bytes
+    kubernetes_inflight_proof_test.go:101: 🚀 GRACEFUL: Request 131 started processing
+    kubernetes_inflight_proof_test.go:123: ✅ GRACEFUL: Request 111 completed successfully
+    kubernetes_inflight_proof_test.go:260: ✅ GRACEFUL: Client request 110 SUCCESS: 76 bytes
+    kubernetes_inflight_proof_test.go:101: 🚀 GRACEFUL: Request 141 started processing
+    kubernetes_inflight_proof_test.go:123: ✅ GRACEFUL: Request 121 completed successfully
+    kubernetes_inflight_proof_test.go:260: ✅ GRACEFUL: Client request 120 SUCCESS: 76 bytes
+    kubernetes_inflight_proof_test.go:101: 🚀 GRACEFUL: Request 151 started processing
+    kubernetes_inflight_proof_test.go:123: ✅ GRACEFUL: Request 131 completed successfully
+    kubernetes_inflight_proof_test.go:260: ✅ GRACEFUL: Client request 130 SUCCESS: 76 bytes
+    kubernetes_inflight_proof_test.go:101: 🚀 GRACEFUL: Request 161 started processing
+    kubernetes_inflight_proof_test.go:123: ✅ GRACEFUL: Request 141 completed successfully
+    kubernetes_inflight_proof_test.go:260: ✅ GRACEFUL: Client request 140 SUCCESS: 76 bytes
+    kubernetes_inflight_proof_test.go:101: 🚀 GRACEFUL: Request 171 started processing
+    kubernetes_inflight_proof_test.go:123: ✅ GRACEFUL: Request 151 completed successfully
+    kubernetes_inflight_proof_test.go:260: ✅ GRACEFUL: Client request 150 SUCCESS: 76 bytes
+    kubernetes_inflight_proof_test.go:101: 🚀 GRACEFUL: Request 181 started processing
+    kubernetes_inflight_proof_test.go:123: ✅ GRACEFUL: Request 161 completed successfully
+    kubernetes_inflight_proof_test.go:260: ✅ GRACEFUL: Client request 160 SUCCESS: 76 bytes
+    kubernetes_inflight_proof_test.go:101: 🚀 GRACEFUL: Request 191 started processing
+    kubernetes_inflight_proof_test.go:123: ✅ GRACEFUL: Request 171 completed successfully
+    kubernetes_inflight_proof_test.go:260: ✅ GRACEFUL: Client request 170 SUCCESS: 76 bytes
+    kubernetes_inflight_proof_test.go:123: ✅ GRACEFUL: Request 181 completed successfully
+    kubernetes_inflight_proof_test.go:260: ✅ GRACEFUL: Client request 180 SUCCESS: 76 bytes
+    kubernetes_inflight_proof_test.go:176: 🛡️ GRACEFUL: Triggering graceful shutdown with ~100 requests in-flight
+[gracewrap] 2025/09/13 23:07:18.427443 Marked as not ready; health checks will now return 503
+[gracewrap] 2025/09/13 23:07:18.427452 Waiting 200ms for load balancers to stop routing traffic...
+    kubernetes_inflight_proof_test.go:123: ✅ GRACEFUL: Request 191 completed successfully
+    kubernetes_inflight_proof_test.go:260: ✅ GRACEFUL: Client request 190 SUCCESS: 76 bytes
+[gracewrap] 2025/09/13 23:07:18.631965 HTTP server shutdown completed
+[gracewrap] 2025/09/13 23:07:18.631996 Waiting 1s for final cleanup
+[gracewrap] 2025/09/13 23:07:19.633041 Graceful shutdown completed
+    kubernetes_inflight_proof_test.go:73: ✅ WITH GraceWrap (200 quick requests (300ms each)):
+    kubernetes_inflight_proof_test.go:74:    Requests started: 200
+    kubernetes_inflight_proof_test.go:75:    Requests completed: 200
+    kubernetes_inflight_proof_test.go:76:    Requests KILLED: 0
+    kubernetes_inflight_proof_test.go:77:    PROTECTION RATE: 100.00%
+=== RUN   TestKubernetesInFlightRequestProof/Medium_Requests_Large_Sample_Without_GraceWrap
+    kubernetes_inflight_proof_test.go:57: 📊 Testing 100 medium requests (800ms each) WITHOUT GraceWrap
+    kubernetes_inflight_proof_test.go:101: 🚀 NO-GRACE: Request 1 started processing
+    kubernetes_inflight_proof_test.go:101: 🚀 NO-GRACE: Request 2 started processing
+    kubernetes_inflight_proof_test.go:101: 🚀 NO-GRACE: Request 3 started processing
+    kubernetes_inflight_proof_test.go:101: 🚀 NO-GRACE: Request 4 started processing
+    kubernetes_inflight_proof_test.go:101: 🚀 NO-GRACE: Request 5 started processing
+    kubernetes_inflight_proof_test.go:101: 🚀 NO-GRACE: Request 6 started processing
+    kubernetes_inflight_proof_test.go:101: 🚀 NO-GRACE: Request 7 started processing
+    kubernetes_inflight_proof_test.go:101: 🚀 NO-GRACE: Request 8 started processing
+    kubernetes_inflight_proof_test.go:101: 🚀 NO-GRACE: Request 9 started processing
+    kubernetes_inflight_proof_test.go:101: 🚀 NO-GRACE: Request 10 started processing
+    kubernetes_inflight_proof_test.go:101: 🚀 NO-GRACE: Request 11 started processing
+    kubernetes_inflight_proof_test.go:101: 🚀 NO-GRACE: Request 21 started processing
+    kubernetes_inflight_proof_test.go:101: 🚀 NO-GRACE: Request 31 started processing
+    kubernetes_inflight_proof_test.go:101: 🚀 NO-GRACE: Request 41 started processing
+    kubernetes_inflight_proof_test.go:101: 🚀 NO-GRACE: Request 51 started processing
+    kubernetes_inflight_proof_test.go:123: ✅ NO-GRACE: Request 1 completed successfully
+    kubernetes_inflight_proof_test.go:260: ✅ NO-GRACE: Client request 0 SUCCESS: 74 bytes
+    kubernetes_inflight_proof_test.go:101: 🚀 NO-GRACE: Request 61 started processing
+    kubernetes_inflight_proof_test.go:123: ✅ NO-GRACE: Request 2 completed successfully
+    kubernetes_inflight_proof_test.go:260: ✅ NO-GRACE: Client request 1 SUCCESS: 74 bytes
+    kubernetes_inflight_proof_test.go:123: ✅ NO-GRACE: Request 3 completed successfully
+    kubernetes_inflight_proof_test.go:260: ✅ NO-GRACE: Client request 2 SUCCESS: 74 bytes
+    kubernetes_inflight_proof_test.go:123: ✅ NO-GRACE: Request 4 completed successfully
+    kubernetes_inflight_proof_test.go:260: ✅ NO-GRACE: Client request 3 SUCCESS: 74 bytes
+    kubernetes_inflight_proof_test.go:123: ✅ NO-GRACE: Request 5 completed successfully
+    kubernetes_inflight_proof_test.go:260: ✅ NO-GRACE: Client request 4 SUCCESS: 74 bytes
+    kubernetes_inflight_proof_test.go:123: ✅ NO-GRACE: Request 6 completed successfully
+    kubernetes_inflight_proof_test.go:260: ✅ NO-GRACE: Client request 5 SUCCESS: 74 bytes
+    kubernetes_inflight_proof_test.go:123: ✅ NO-GRACE: Request 7 completed successfully
+    kubernetes_inflight_proof_test.go:260: ✅ NO-GRACE: Client request 6 SUCCESS: 74 bytes
+    kubernetes_inflight_proof_test.go:123: ✅ NO-GRACE: Request 8 completed successfully
+    kubernetes_inflight_proof_test.go:260: ✅ NO-GRACE: Client request 7 SUCCESS: 74 bytes
+    kubernetes_inflight_proof_test.go:123: ✅ NO-GRACE: Request 9 completed successfully
+    kubernetes_inflight_proof_test.go:260: ✅ NO-GRACE: Client request 8 SUCCESS: 74 bytes
+    kubernetes_inflight_proof_test.go:123: ✅ NO-GRACE: Request 10 completed successfully
+    kubernetes_inflight_proof_test.go:260: ✅ NO-GRACE: Client request 9 SUCCESS: 75 bytes
+    kubernetes_inflight_proof_test.go:123: ✅ NO-GRACE: Request 11 completed successfully
+    kubernetes_inflight_proof_test.go:260: ✅ NO-GRACE: Client request 10 SUCCESS: 75 bytes
+    kubernetes_inflight_proof_test.go:101: 🚀 NO-GRACE: Request 71 started processing
+    kubernetes_inflight_proof_test.go:123: ✅ NO-GRACE: Request 21 completed successfully
+    kubernetes_inflight_proof_test.go:260: ✅ NO-GRACE: Client request 20 SUCCESS: 75 bytes
+    kubernetes_inflight_proof_test.go:101: 🚀 NO-GRACE: Request 81 started processing
+    kubernetes_inflight_proof_test.go:123: ✅ NO-GRACE: Request 31 completed successfully
+    kubernetes_inflight_proof_test.go:260: ✅ NO-GRACE: Client request 30 SUCCESS: 75 bytes
+    kubernetes_inflight_proof_test.go:101: 🚀 NO-GRACE: Request 91 started processing
+    kubernetes_inflight_proof_test.go:123: ✅ NO-GRACE: Request 41 completed successfully
+    kubernetes_inflight_proof_test.go:260: ✅ NO-GRACE: Client request 40 SUCCESS: 75 bytes
+    kubernetes_inflight_proof_test.go:123: ✅ NO-GRACE: Request 51 completed successfully
+    kubernetes_inflight_proof_test.go:260: ✅ NO-GRACE: Client request 50 SUCCESS: 75 bytes
+    kubernetes_inflight_proof_test.go:210: ⚡ NO-GRACE: Simulating Kubernetes SIGKILL with ~50 requests in-flight
+    kubernetes_inflight_proof_test.go:123: ✅ NO-GRACE: Request 61 completed successfully
+    kubernetes_inflight_proof_test.go:260: ✅ NO-GRACE: Client request 60 SUCCESS: 75 bytes
+    kubernetes_inflight_proof_test.go:123: ✅ NO-GRACE: Request 71 completed successfully
+    kubernetes_inflight_proof_test.go:260: ✅ NO-GRACE: Client request 70 SUCCESS: 75 bytes
+    kubernetes_inflight_proof_test.go:216: 💀 NO-GRACE: Process terminated by SIGKILL
+    kubernetes_inflight_proof_test.go:242: 💀 NO-GRACE: Client request 97 FAILED: Get "http://127.0.0.1:62582/inflight-request-97": EOF
+    kubernetes_inflight_proof_test.go:242: 💀 NO-GRACE: Client request 92 FAILED: Get "http://127.0.0.1:62582/inflight-request-92": EOF
+    kubernetes_inflight_proof_test.go:242: 💀 NO-GRACE: Client request 83 FAILED: Get "http://127.0.0.1:62582/inflight-request-83": EOF
+    kubernetes_inflight_proof_test.go:242: 💀 NO-GRACE: Client request 89 FAILED: Get "http://127.0.0.1:62582/inflight-request-89": EOF
+    kubernetes_inflight_proof_test.go:242: 💀 NO-GRACE: Client request 95 FAILED: Get "http://127.0.0.1:62582/inflight-request-95": EOF
+    kubernetes_inflight_proof_test.go:242: 💀 NO-GRACE: Client request 87 FAILED: Get "http://127.0.0.1:62582/inflight-request-87": EOF
+    kubernetes_inflight_proof_test.go:242: 💀 NO-GRACE: Client request 76 FAILED: Get "http://127.0.0.1:62582/inflight-request-76": EOF
+    kubernetes_inflight_proof_test.go:242: 💀 NO-GRACE: Client request 77 FAILED: Get "http://127.0.0.1:62582/inflight-request-77": EOF
+    kubernetes_inflight_proof_test.go:242: 💀 NO-GRACE: Client request 86 FAILED: Get "http://127.0.0.1:62582/inflight-request-86": EOF
+    kubernetes_inflight_proof_test.go:242: 💀 NO-GRACE: Client request 91 FAILED: Get "http://127.0.0.1:62582/inflight-request-91": EOF
+    kubernetes_inflight_proof_test.go:242: 💀 NO-GRACE: Client request 94 FAILED: Get "http://127.0.0.1:62582/inflight-request-94": EOF
+    kubernetes_inflight_proof_test.go:242: 💀 NO-GRACE: Client request 96 FAILED: Get "http://127.0.0.1:62582/inflight-request-96": EOF
+    kubernetes_inflight_proof_test.go:242: 💀 NO-GRACE: Client request 80 FAILED: Get "http://127.0.0.1:62582/inflight-request-80": EOF
+    kubernetes_inflight_proof_test.go:242: 💀 NO-GRACE: Client request 99 FAILED: Get "http://127.0.0.1:62582/inflight-request-99": EOF
+    kubernetes_inflight_proof_test.go:242: 💀 NO-GRACE: Client request 82 FAILED: Get "http://127.0.0.1:62582/inflight-request-82": EOF
+    kubernetes_inflight_proof_test.go:242: 💀 NO-GRACE: Client request 90 FAILED: Get "http://127.0.0.1:62582/inflight-request-90": EOF
+    kubernetes_inflight_proof_test.go:242: 💀 NO-GRACE: Client request 78 FAILED: Get "http://127.0.0.1:62582/inflight-request-78": EOF
+    kubernetes_inflight_proof_test.go:242: 💀 NO-GRACE: Client request 74 FAILED: Get "http://127.0.0.1:62582/inflight-request-74": EOF
+    kubernetes_inflight_proof_test.go:242: 💀 NO-GRACE: Client request 75 FAILED: Get "http://127.0.0.1:62582/inflight-request-75": EOF
+    kubernetes_inflight_proof_test.go:242: 💀 NO-GRACE: Client request 98 FAILED: Get "http://127.0.0.1:62582/inflight-request-98": EOF
+    kubernetes_inflight_proof_test.go:242: 💀 NO-GRACE: Client request 79 FAILED: Get "http://127.0.0.1:62582/inflight-request-79": EOF
+    kubernetes_inflight_proof_test.go:242: 💀 NO-GRACE: Client request 85 FAILED: Get "http://127.0.0.1:62582/inflight-request-85": EOF
+    kubernetes_inflight_proof_test.go:242: 💀 NO-GRACE: Client request 88 FAILED: Get "http://127.0.0.1:62582/inflight-request-88": EOF
+    kubernetes_inflight_proof_test.go:242: 💀 NO-GRACE: Client request 81 FAILED: Get "http://127.0.0.1:62582/inflight-request-81": EOF
+    kubernetes_inflight_proof_test.go:242: 💀 NO-GRACE: Client request 84 FAILED: Get "http://127.0.0.1:62582/inflight-request-84": EOF
+    kubernetes_inflight_proof_test.go:242: 💀 NO-GRACE: Client request 93 FAILED: Get "http://127.0.0.1:62582/inflight-request-93": EOF
+    kubernetes_inflight_proof_test.go:61: ❌ WITHOUT GraceWrap (100 medium requests (800ms each)):
+    kubernetes_inflight_proof_test.go:62:    Requests started: 100
+    kubernetes_inflight_proof_test.go:63:    Requests completed: 74
+    kubernetes_inflight_proof_test.go:64:    Requests KILLED: 26
+    kubernetes_inflight_proof_test.go:65:    KILL RATE: 26.00%
+=== RUN   TestKubernetesInFlightRequestProof/Medium_Requests_Large_Sample_With_GraceWrap
+    kubernetes_inflight_proof_test.go:69: 📊 Testing 100 medium requests (800ms each) WITH GraceWrap
+[gracewrap] 2025/09/13 23:07:21.392194 HTTP server starting on 127.0.0.1:62683
+    kubernetes_inflight_proof_test.go:101: 🚀 GRACEFUL: Request 1 started processing
+    kubernetes_inflight_proof_test.go:101: 🚀 GRACEFUL: Request 2 started processing
+    kubernetes_inflight_proof_test.go:101: 🚀 GRACEFUL: Request 3 started processing
+    kubernetes_inflight_proof_test.go:101: 🚀 GRACEFUL: Request 4 started processing
+    kubernetes_inflight_proof_test.go:101: 🚀 GRACEFUL: Request 5 started processing
+    kubernetes_inflight_proof_test.go:101: 🚀 GRACEFUL: Request 6 started processing
+    kubernetes_inflight_proof_test.go:101: 🚀 GRACEFUL: Request 7 started processing
+    kubernetes_inflight_proof_test.go:101: 🚀 GRACEFUL: Request 8 started processing
+    kubernetes_inflight_proof_test.go:101: 🚀 GRACEFUL: Request 9 started processing
+    kubernetes_inflight_proof_test.go:101: 🚀 GRACEFUL: Request 10 started processing
+    kubernetes_inflight_proof_test.go:101: 🚀 GRACEFUL: Request 11 started processing
+    kubernetes_inflight_proof_test.go:101: 🚀 GRACEFUL: Request 21 started processing
+    kubernetes_inflight_proof_test.go:101: 🚀 GRACEFUL: Request 31 started processing
+    kubernetes_inflight_proof_test.go:101: 🚀 GRACEFUL: Request 41 started processing
+    kubernetes_inflight_proof_test.go:101: 🚀 GRACEFUL: Request 51 started processing
+    kubernetes_inflight_proof_test.go:123: ✅ GRACEFUL: Request 1 completed successfully
+    kubernetes_inflight_proof_test.go:260: ✅ GRACEFUL: Client request 0 SUCCESS: 74 bytes
+    kubernetes_inflight_proof_test.go:101: 🚀 GRACEFUL: Request 61 started processing
+    kubernetes_inflight_proof_test.go:123: ✅ GRACEFUL: Request 2 completed successfully
+    kubernetes_inflight_proof_test.go:260: ✅ GRACEFUL: Client request 1 SUCCESS: 74 bytes
+    kubernetes_inflight_proof_test.go:123: ✅ GRACEFUL: Request 3 completed successfully
+    kubernetes_inflight_proof_test.go:260: ✅ GRACEFUL: Client request 2 SUCCESS: 74 bytes
+    kubernetes_inflight_proof_test.go:123: ✅ GRACEFUL: Request 4 completed successfully
+    kubernetes_inflight_proof_test.go:260: ✅ GRACEFUL: Client request 3 SUCCESS: 74 bytes
+    kubernetes_inflight_proof_test.go:123: ✅ GRACEFUL: Request 5 completed successfully
+    kubernetes_inflight_proof_test.go:260: ✅ GRACEFUL: Client request 4 SUCCESS: 74 bytes
+    kubernetes_inflight_proof_test.go:123: ✅ GRACEFUL: Request 6 completed successfully
+    kubernetes_inflight_proof_test.go:260: ✅ GRACEFUL: Client request 5 SUCCESS: 74 bytes
+    kubernetes_inflight_proof_test.go:123: ✅ GRACEFUL: Request 7 completed successfully
+    kubernetes_inflight_proof_test.go:260: ✅ GRACEFUL: Client request 6 SUCCESS: 74 bytes
+    kubernetes_inflight_proof_test.go:123: ✅ GRACEFUL: Request 8 completed successfully
+    kubernetes_inflight_proof_test.go:260: ✅ GRACEFUL: Client request 7 SUCCESS: 74 bytes
+    kubernetes_inflight_proof_test.go:123: ✅ GRACEFUL: Request 9 completed successfully
+    kubernetes_inflight_proof_test.go:260: ✅ GRACEFUL: Client request 8 SUCCESS: 74 bytes
+    kubernetes_inflight_proof_test.go:123: ✅ GRACEFUL: Request 10 completed successfully
+    kubernetes_inflight_proof_test.go:260: ✅ GRACEFUL: Client request 9 SUCCESS: 75 bytes
+    kubernetes_inflight_proof_test.go:123: ✅ GRACEFUL: Request 11 completed successfully
+    kubernetes_inflight_proof_test.go:260: ✅ GRACEFUL: Client request 10 SUCCESS: 75 bytes
+    kubernetes_inflight_proof_test.go:101: 🚀 GRACEFUL: Request 71 started processing
+    kubernetes_inflight_proof_test.go:123: ✅ GRACEFUL: Request 21 completed successfully
+    kubernetes_inflight_proof_test.go:260: ✅ GRACEFUL: Client request 20 SUCCESS: 75 bytes
+    kubernetes_inflight_proof_test.go:101: 🚀 GRACEFUL: Request 81 started processing
+    kubernetes_inflight_proof_test.go:123: ✅ GRACEFUL: Request 31 completed successfully
+    kubernetes_inflight_proof_test.go:260: ✅ GRACEFUL: Client request 30 SUCCESS: 75 bytes
+    kubernetes_inflight_proof_test.go:101: 🚀 GRACEFUL: Request 91 started processing
+    kubernetes_inflight_proof_test.go:123: ✅ GRACEFUL: Request 41 completed successfully
+    kubernetes_inflight_proof_test.go:260: ✅ GRACEFUL: Client request 40 SUCCESS: 75 bytes
+    kubernetes_inflight_proof_test.go:123: ✅ GRACEFUL: Request 51 completed successfully
+    kubernetes_inflight_proof_test.go:260: ✅ GRACEFUL: Client request 50 SUCCESS: 75 bytes
+    kubernetes_inflight_proof_test.go:176: 🛡️ GRACEFUL: Triggering graceful shutdown with ~50 requests in-flight
+[gracewrap] 2025/09/13 23:07:22.945215 Marked as not ready; health checks will now return 503
+[gracewrap] 2025/09/13 23:07:22.945241 Waiting 200ms for load balancers to stop routing traffic...
+    kubernetes_inflight_proof_test.go:123: ✅ GRACEFUL: Request 61 completed successfully
+    kubernetes_inflight_proof_test.go:260: ✅ GRACEFUL: Client request 60 SUCCESS: 75 bytes
+    kubernetes_inflight_proof_test.go:123: ✅ GRACEFUL: Request 71 completed successfully
+    kubernetes_inflight_proof_test.go:260: ✅ GRACEFUL: Client request 70 SUCCESS: 75 bytes
+    kubernetes_inflight_proof_test.go:123: ✅ GRACEFUL: Request 81 completed successfully
+    kubernetes_inflight_proof_test.go:260: ✅ GRACEFUL: Client request 80 SUCCESS: 75 bytes
+    kubernetes_inflight_proof_test.go:123: ✅ GRACEFUL: Request 91 completed successfully
+    kubernetes_inflight_proof_test.go:260: ✅ GRACEFUL: Client request 90 SUCCESS: 75 bytes
+[gracewrap] 2025/09/13 23:07:23.684100 HTTP server shutdown completed
+[gracewrap] 2025/09/13 23:07:23.684186 Waiting 1s for final cleanup
+[gracewrap] 2025/09/13 23:07:24.685242 Graceful shutdown completed
+    kubernetes_inflight_proof_test.go:73: ✅ WITH GraceWrap (100 medium requests (800ms each)):
+    kubernetes_inflight_proof_test.go:74:    Requests started: 100
+    kubernetes_inflight_proof_test.go:75:    Requests completed: 100
+    kubernetes_inflight_proof_test.go:76:    Requests KILLED: 0
+    kubernetes_inflight_proof_test.go:77:    PROTECTION RATE: 100.00%
+=== RUN   TestKubernetesInFlightRequestProof/Slow_Requests_Sample_Without_GraceWrap
+    kubernetes_inflight_proof_test.go:57: 📊 Testing 50 slow requests (1.5s each) WITHOUT GraceWrap
+    kubernetes_inflight_proof_test.go:101: 🚀 NO-GRACE: Request 1 started processing
+    kubernetes_inflight_proof_test.go:101: 🚀 NO-GRACE: Request 2 started processing
+    kubernetes_inflight_proof_test.go:101: 🚀 NO-GRACE: Request 3 started processing
+    kubernetes_inflight_proof_test.go:101: 🚀 NO-GRACE: Request 4 started processing
+    kubernetes_inflight_proof_test.go:101: 🚀 NO-GRACE: Request 5 started processing
+    kubernetes_inflight_proof_test.go:101: 🚀 NO-GRACE: Request 6 started processing
+    kubernetes_inflight_proof_test.go:101: 🚀 NO-GRACE: Request 7 started processing
+    kubernetes_inflight_proof_test.go:101: 🚀 NO-GRACE: Request 8 started processing
+    kubernetes_inflight_proof_test.go:101: 🚀 NO-GRACE: Request 9 started processing
+    kubernetes_inflight_proof_test.go:101: 🚀 NO-GRACE: Request 10 started processing
+    kubernetes_inflight_proof_test.go:101: 🚀 NO-GRACE: Request 11 started processing
+    kubernetes_inflight_proof_test.go:101: 🚀 NO-GRACE: Request 21 started processing
+    kubernetes_inflight_proof_test.go:101: 🚀 NO-GRACE: Request 31 started processing
+    kubernetes_inflight_proof_test.go:101: 🚀 NO-GRACE: Request 41 started processing
+    kubernetes_inflight_proof_test.go:210: ⚡ NO-GRACE: Simulating Kubernetes SIGKILL with ~25 requests in-flight
+    kubernetes_inflight_proof_test.go:123: ✅ NO-GRACE: Request 1 completed successfully
+    kubernetes_inflight_proof_test.go:260: ✅ NO-GRACE: Client request 0 SUCCESS: 74 bytes
+    kubernetes_inflight_proof_test.go:123: ✅ NO-GRACE: Request 2 completed successfully
+    kubernetes_inflight_proof_test.go:260: ✅ NO-GRACE: Client request 1 SUCCESS: 74 bytes
+    kubernetes_inflight_proof_test.go:123: ✅ NO-GRACE: Request 3 completed successfully
+    kubernetes_inflight_proof_test.go:260: ✅ NO-GRACE: Client request 2 SUCCESS: 74 bytes
+    kubernetes_inflight_proof_test.go:216: 💀 NO-GRACE: Process terminated by SIGKILL
+    kubernetes_inflight_proof_test.go:242: 💀 NO-GRACE: Client request 4 FAILED: Get "http://127.0.0.1:62784/inflight-request-4": EOF
+    kubernetes_inflight_proof_test.go:242: 💀 NO-GRACE: Client request 35 FAILED: Get "http://127.0.0.1:62784/inflight-request-35": EOF
+    kubernetes_inflight_proof_test.go:242: 💀 NO-GRACE: Client request 32 FAILED: Get "http://127.0.0.1:62784/inflight-request-32": EOF
+    kubernetes_inflight_proof_test.go:242: 💀 NO-GRACE: Client request 33 FAILED: Get "http://127.0.0.1:62784/inflight-request-33": EOF
+    kubernetes_inflight_proof_test.go:242: 💀 NO-GRACE: Client request 42 FAILED: Get "http://127.0.0.1:62784/inflight-request-42": EOF
+    kubernetes_inflight_proof_test.go:242: 💀 NO-GRACE: Client request 8 FAILED: Get "http://127.0.0.1:62784/inflight-request-8": EOF
+    kubernetes_inflight_proof_test.go:242: 💀 NO-GRACE: Client request 3 FAILED: Get "http://127.0.0.1:62784/inflight-request-3": EOF
+    kubernetes_inflight_proof_test.go:242: 💀 NO-GRACE: Client request 39 FAILED: Get "http://127.0.0.1:62784/inflight-request-39": EOF
+    kubernetes_inflight_proof_test.go:242: 💀 NO-GRACE: Client request 43 FAILED: Get "http://127.0.0.1:62784/inflight-request-43": EOF
+    kubernetes_inflight_proof_test.go:242: 💀 NO-GRACE: Client request 46 FAILED: Get "http://127.0.0.1:62784/inflight-request-46": EOF
+    kubernetes_inflight_proof_test.go:242: 💀 NO-GRACE: Client request 7 FAILED: Get "http://127.0.0.1:62784/inflight-request-7": EOF
+    kubernetes_inflight_proof_test.go:242: 💀 NO-GRACE: Client request 21 FAILED: Get "http://127.0.0.1:62784/inflight-request-21": EOF
+    kubernetes_inflight_proof_test.go:242: 💀 NO-GRACE: Client request 27 FAILED: Get "http://127.0.0.1:62784/inflight-request-27": EOF
+    kubernetes_inflight_proof_test.go:242: 💀 NO-GRACE: Client request 17 FAILED: Get "http://127.0.0.1:62784/inflight-request-17": EOF
+    kubernetes_inflight_proof_test.go:242: 💀 NO-GRACE: Client request 29 FAILED: Get "http://127.0.0.1:62784/inflight-request-29": EOF
+    kubernetes_inflight_proof_test.go:242: 💀 NO-GRACE: Client request 47 FAILED: Get "http://127.0.0.1:62784/inflight-request-47": EOF
+    kubernetes_inflight_proof_test.go:242: 💀 NO-GRACE: Client request 49 FAILED: Get "http://127.0.0.1:62784/inflight-request-49": EOF
+    kubernetes_inflight_proof_test.go:242: 💀 NO-GRACE: Client request 6 FAILED: Get "http://127.0.0.1:62784/inflight-request-6": EOF
+    kubernetes_inflight_proof_test.go:242: 💀 NO-GRACE: Client request 10 FAILED: Get "http://127.0.0.1:62784/inflight-request-10": EOF
+    kubernetes_inflight_proof_test.go:242: 💀 NO-GRACE: Client request 31 FAILED: Get "http://127.0.0.1:62784/inflight-request-31": EOF
+    kubernetes_inflight_proof_test.go:242: 💀 NO-GRACE: Client request 36 FAILED: Get "http://127.0.0.1:62784/inflight-request-36": EOF
+    kubernetes_inflight_proof_test.go:242: 💀 NO-GRACE: Client request 44 FAILED: Get "http://127.0.0.1:62784/inflight-request-44": EOF
+    kubernetes_inflight_proof_test.go:242: 💀 NO-GRACE: Client request 41 FAILED: Get "http://127.0.0.1:62784/inflight-request-41": EOF
+    kubernetes_inflight_proof_test.go:242: 💀 NO-GRACE: Client request 48 FAILED: Get "http://127.0.0.1:62784/inflight-request-48": EOF
+    kubernetes_inflight_proof_test.go:242: 💀 NO-GRACE: Client request 5 FAILED: Get "http://127.0.0.1:62784/inflight-request-5": EOF
+    kubernetes_inflight_proof_test.go:242: 💀 NO-GRACE: Client request 16 FAILED: Get "http://127.0.0.1:62784/inflight-request-16": EOF
+    kubernetes_inflight_proof_test.go:242: 💀 NO-GRACE: Client request 15 FAILED: Get "http://127.0.0.1:62784/inflight-request-15": EOF
+    kubernetes_inflight_proof_test.go:242: 💀 NO-GRACE: Client request 24 FAILED: Get "http://127.0.0.1:62784/inflight-request-24": EOF
+    kubernetes_inflight_proof_test.go:242: 💀 NO-GRACE: Client request 18 FAILED: Get "http://127.0.0.1:62784/inflight-request-18": EOF
+    kubernetes_inflight_proof_test.go:242: 💀 NO-GRACE: Client request 37 FAILED: Get "http://127.0.0.1:62784/inflight-request-37": EOF
+    kubernetes_inflight_proof_test.go:242: 💀 NO-GRACE: Client request 34 FAILED: Get "http://127.0.0.1:62784/inflight-request-34": EOF
+    kubernetes_inflight_proof_test.go:242: 💀 NO-GRACE: Client request 45 FAILED: Get "http://127.0.0.1:62784/inflight-request-45": EOF
+    kubernetes_inflight_proof_test.go:242: 💀 NO-GRACE: Client request 20 FAILED: Get "http://127.0.0.1:62784/inflight-request-20": EOF
+    kubernetes_inflight_proof_test.go:242: 💀 NO-GRACE: Client request 12 FAILED: Get "http://127.0.0.1:62784/inflight-request-12": EOF
+    kubernetes_inflight_proof_test.go:242: 💀 NO-GRACE: Client request 11 FAILED: Get "http://127.0.0.1:62784/inflight-request-11": EOF
+    kubernetes_inflight_proof_test.go:242: 💀 NO-GRACE: Client request 13 FAILED: Get "http://127.0.0.1:62784/inflight-request-13": EOF
+    kubernetes_inflight_proof_test.go:242: 💀 NO-GRACE: Client request 22 FAILED: Get "http://127.0.0.1:62784/inflight-request-22": EOF
+    kubernetes_inflight_proof_test.go:242: 💀 NO-GRACE: Client request 14 FAILED: Get "http://127.0.0.1:62784/inflight-request-14": EOF
+    kubernetes_inflight_proof_test.go:242: 💀 NO-GRACE: Client request 9 FAILED: Get "http://127.0.0.1:62784/inflight-request-9": EOF
+    kubernetes_inflight_proof_test.go:242: 💀 NO-GRACE: Client request 40 FAILED: Get "http://127.0.0.1:62784/inflight-request-40": EOF
+    kubernetes_inflight_proof_test.go:242: 💀 NO-GRACE: Client request 30 FAILED: Get "http://127.0.0.1:62784/inflight-request-30": EOF
+    kubernetes_inflight_proof_test.go:242: 💀 NO-GRACE: Client request 23 FAILED: Get "http://127.0.0.1:62784/inflight-request-23": EOF
+    kubernetes_inflight_proof_test.go:242: 💀 NO-GRACE: Client request 25 FAILED: Get "http://127.0.0.1:62784/inflight-request-25": EOF
+    kubernetes_inflight_proof_test.go:242: 💀 NO-GRACE: Client request 26 FAILED: Get "http://127.0.0.1:62784/inflight-request-26": EOF
+    kubernetes_inflight_proof_test.go:242: 💀 NO-GRACE: Client request 19 FAILED: Get "http://127.0.0.1:62784/inflight-request-19": EOF
+    kubernetes_inflight_proof_test.go:242: 💀 NO-GRACE: Client request 38 FAILED: Get "http://127.0.0.1:62784/inflight-request-38": EOF
+    kubernetes_inflight_proof_test.go:242: 💀 NO-GRACE: Client request 28 FAILED: Get "http://127.0.0.1:62784/inflight-request-28": EOF
+    kubernetes_inflight_proof_test.go:61: ❌ WITHOUT GraceWrap (50 slow requests (1.5s each)):
+    kubernetes_inflight_proof_test.go:62:    Requests started: 50
+    kubernetes_inflight_proof_test.go:63:    Requests completed: 3
+    kubernetes_inflight_proof_test.go:64:    Requests KILLED: 47
+    kubernetes_inflight_proof_test.go:65:    KILL RATE: 94.00%
+=== RUN   TestKubernetesInFlightRequestProof/Slow_Requests_Sample_With_GraceWrap
+    kubernetes_inflight_proof_test.go:69: 📊 Testing 50 slow requests (1.5s each) WITH GraceWrap
+[gracewrap] 2025/09/13 23:07:26.212952 HTTP server starting on 127.0.0.1:62835
+    kubernetes_inflight_proof_test.go:101: 🚀 GRACEFUL: Request 1 started processing
+    kubernetes_inflight_proof_test.go:101: 🚀 GRACEFUL: Request 2 started processing
+    kubernetes_inflight_proof_test.go:101: 🚀 GRACEFUL: Request 3 started processing
+    kubernetes_inflight_proof_test.go:101: 🚀 GRACEFUL: Request 4 started processing
+    kubernetes_inflight_proof_test.go:101: 🚀 GRACEFUL: Request 5 started processing
+    kubernetes_inflight_proof_test.go:101: 🚀 GRACEFUL: Request 6 started processing
+    kubernetes_inflight_proof_test.go:101: 🚀 GRACEFUL: Request 7 started processing
+    kubernetes_inflight_proof_test.go:101: 🚀 GRACEFUL: Request 8 started processing
+    kubernetes_inflight_proof_test.go:101: 🚀 GRACEFUL: Request 9 started processing
+    kubernetes_inflight_proof_test.go:101: 🚀 GRACEFUL: Request 10 started processing
+    kubernetes_inflight_proof_test.go:101: 🚀 GRACEFUL: Request 11 started processing
+    kubernetes_inflight_proof_test.go:101: 🚀 GRACEFUL: Request 21 started processing
+    kubernetes_inflight_proof_test.go:101: 🚀 GRACEFUL: Request 31 started processing
+    kubernetes_inflight_proof_test.go:101: 🚀 GRACEFUL: Request 41 started processing
+    kubernetes_inflight_proof_test.go:176: 🛡️ GRACEFUL: Triggering graceful shutdown with ~25 requests in-flight
+[gracewrap] 2025/09/13 23:07:27.350580 Marked as not ready; health checks will now return 503
+[gracewrap] 2025/09/13 23:07:27.350609 Waiting 200ms for load balancers to stop routing traffic...
+    kubernetes_inflight_proof_test.go:123: ✅ GRACEFUL: Request 1 completed successfully
+    kubernetes_inflight_proof_test.go:260: ✅ GRACEFUL: Client request 0 SUCCESS: 74 bytes
+    kubernetes_inflight_proof_test.go:123: ✅ GRACEFUL: Request 2 completed successfully
+    kubernetes_inflight_proof_test.go:260: ✅ GRACEFUL: Client request 1 SUCCESS: 74 bytes
+    kubernetes_inflight_proof_test.go:123: ✅ GRACEFUL: Request 3 completed successfully
+    kubernetes_inflight_proof_test.go:260: ✅ GRACEFUL: Client request 2 SUCCESS: 74 bytes
+    kubernetes_inflight_proof_test.go:123: ✅ GRACEFUL: Request 4 completed successfully
+    kubernetes_inflight_proof_test.go:260: ✅ GRACEFUL: Client request 3 SUCCESS: 74 bytes
+    kubernetes_inflight_proof_test.go:123: ✅ GRACEFUL: Request 5 completed successfully
+    kubernetes_inflight_proof_test.go:260: ✅ GRACEFUL: Client request 4 SUCCESS: 74 bytes
+    kubernetes_inflight_proof_test.go:123: ✅ GRACEFUL: Request 6 completed successfully
+    kubernetes_inflight_proof_test.go:260: ✅ GRACEFUL: Client request 5 SUCCESS: 74 bytes
+    kubernetes_inflight_proof_test.go:123: ✅ GRACEFUL: Request 7 completed successfully
+    kubernetes_inflight_proof_test.go:260: ✅ GRACEFUL: Client request 6 SUCCESS: 74 bytes
+    kubernetes_inflight_proof_test.go:123: ✅ GRACEFUL: Request 8 completed successfully
+    kubernetes_inflight_proof_test.go:260: ✅ GRACEFUL: Client request 7 SUCCESS: 74 bytes
+    kubernetes_inflight_proof_test.go:123: ✅ GRACEFUL: Request 9 completed successfully
+    kubernetes_inflight_proof_test.go:260: ✅ GRACEFUL: Client request 8 SUCCESS: 74 bytes
+    kubernetes_inflight_proof_test.go:123: ✅ GRACEFUL: Request 10 completed successfully
+    kubernetes_inflight_proof_test.go:260: ✅ GRACEFUL: Client request 9 SUCCESS: 75 bytes
+    kubernetes_inflight_proof_test.go:123: ✅ GRACEFUL: Request 11 completed successfully
+    kubernetes_inflight_proof_test.go:260: ✅ GRACEFUL: Client request 10 SUCCESS: 75 bytes
+    kubernetes_inflight_proof_test.go:123: ✅ GRACEFUL: Request 21 completed successfully
+    kubernetes_inflight_proof_test.go:260: ✅ GRACEFUL: Client request 20 SUCCESS: 75 bytes
+    kubernetes_inflight_proof_test.go:123: ✅ GRACEFUL: Request 31 completed successfully
+    kubernetes_inflight_proof_test.go:260: ✅ GRACEFUL: Client request 30 SUCCESS: 75 bytes
+    kubernetes_inflight_proof_test.go:123: ✅ GRACEFUL: Request 41 completed successfully
+    kubernetes_inflight_proof_test.go:260: ✅ GRACEFUL: Client request 40 SUCCESS: 75 bytes
+[gracewrap] 2025/09/13 23:07:28.622381 HTTP server shutdown completed
+[gracewrap] 2025/09/13 23:07:28.622447 Waiting 1s for final cleanup
+[gracewrap] 2025/09/13 23:07:29.623523 Graceful shutdown completed
+    kubernetes_inflight_proof_test.go:73: ✅ WITH GraceWrap (50 slow requests (1.5s each)):
+    kubernetes_inflight_proof_test.go:74:    Requests started: 50
+    kubernetes_inflight_proof_test.go:75:    Requests completed: 50
+    kubernetes_inflight_proof_test.go:76:    Requests KILLED: 0
+    kubernetes_inflight_proof_test.go:77:    PROTECTION RATE: 100.00%
+--- PASS: TestKubernetesInFlightRequestProof (16.74s)
+    --- PASS: TestKubernetesInFlightRequestProof/Quick_Requests_Large_Sample_Without_GraceWrap (2.82s)
+    kubernetes_inflight_proof_test.go:123: ✅ NO-GRACE: Request 191 completed successfully
+    --- PASS: TestKubernetesInFlightRequestProof/Quick_Requests_Large_Sample_With_GraceWrap (3.93s)
+    --- PASS: TestKubernetesInFlightRequestProof/Medium_Requests_Large_Sample_Without_GraceWrap (1.76s)
+    kubernetes_inflight_proof_test.go:123: ✅ NO-GRACE: Request 81 completed successfully
+    kubernetes_inflight_proof_test.go:123: ✅ NO-GRACE: Request 91 completed successfully
+    --- PASS: TestKubernetesInFlightRequestProof/Medium_Requests_Large_Sample_With_GraceWrap (3.29s)
+    --- PASS: TestKubernetesInFlightRequestProof/Slow_Requests_Sample_Without_GraceWrap (1.53s)
+    kubernetes_inflight_proof_test.go:123: ✅ NO-GRACE: Request 4 completed successfully
+    kubernetes_inflight_proof_test.go:123: ✅ NO-GRACE: Request 5 completed successfully
+    kubernetes_inflight_proof_test.go:123: ✅ NO-GRACE: Request 6 completed successfully
+    kubernetes_inflight_proof_test.go:123: ✅ NO-GRACE: Request 7 completed successfully
+    kubernetes_inflight_proof_test.go:123: ✅ NO-GRACE: Request 8 completed successfully
+    kubernetes_inflight_proof_test.go:123: ✅ NO-GRACE: Request 9 completed successfully
+    kubernetes_inflight_proof_test.go:123: ✅ NO-GRACE: Request 10 completed successfully
+    kubernetes_inflight_proof_test.go:123: ✅ NO-GRACE: Request 11 completed successfully
+    kubernetes_inflight_proof_test.go:123: ✅ NO-GRACE: Request 21 completed successfully
+    kubernetes_inflight_proof_test.go:123: ✅ NO-GRACE: Request 31 completed successfully
+    kubernetes_inflight_proof_test.go:123: ✅ NO-GRACE: Request 41 completed successfully
+    --- PASS: TestKubernetesInFlightRequestProof/Slow_Requests_Sample_With_GraceWrap (3.41s)
+PASS
+ok  	github.com/imran31415/gracewrap/proof_tests	16.964s
+✅ Proof test completed - check proof_tests/results/ for output

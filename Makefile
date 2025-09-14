@@ -66,16 +66,22 @@ mod-download: ## Download go modules
 # Check if examples work (basic smoke test)
 test-examples: ## Test that examples compile and don't panic immediately
 	@echo "Testing HTTP server example..."
-	@timeout 5s bash -c 'cd examples/http_server && go run main.go' || true
+	@cd examples/http_server && go test -v .
 	@echo "Testing gRPC server example..."
-	@timeout 5s bash -c 'cd examples/grpc_server && go run main.go' || true
+	@cd examples/grpc_server && go test -v .
 	@echo "Testing mixed service example..."
-	@timeout 5s bash -c 'cd examples/mixed_service && go run main.go' || true
-	@echo "Examples smoke test completed"
+	@cd examples/mixed_service && go test -v .
+	@echo "All examples tests passed!"
 
 # Benchmark tests
 bench: ## Run benchmark tests
 	go test -bench=. -benchmem ./...
+
+# Proof testing
+proof: ## Run proof test that demonstrates GraceWrap prevents request failures
+	@echo "🎯 Running Kubernetes in-flight request protection proof..."
+	cd proof_tests && go test -v -run TestKubernetesInFlightRequestProof
+	@echo "✅ Proof test completed - check proof_tests/results/ for output"
 
 # Install development tools
 install-tools: ## Install development tools

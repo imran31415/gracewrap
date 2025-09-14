@@ -6,7 +6,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/arsheenali/gracewrap"
+	"github.com/imran31415/gracewrap"
 )
 
 func TestMixedServiceExample(t *testing.T) {
@@ -43,7 +43,7 @@ func TestMixedServiceExample(t *testing.T) {
 	}
 
 	// gRPC service setup
-	grpcServer := graceful.NewGRPCServer()
+	_ = graceful.NewGRPCServer()
 	// In a real app, you'd register services here
 
 	// Start gRPC server

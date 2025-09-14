@@ -1,11 +1,11 @@
-module github.com/arsheenali/gracewrap/examples/grpc_server
+module github.com/imran31415/gracewrap/examples/grpc_server
 
 go 1.21
 
-replace github.com/arsheenali/gracewrap => ../..
+replace github.com/imran31415/gracewrap => ../..
 
 require (
-	github.com/arsheenali/gracewrap v0.0.0-00010101000000-000000000000
+	github.com/imran31415/gracewrap v0.0.0-00010101000000-000000000000
 	google.golang.org/grpc v1.59.0
 )
 

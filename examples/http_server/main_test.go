@@ -6,7 +6,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/arsheenali/gracewrap"
+	"github.com/imran31415/gracewrap"
 )
 
 func TestHTTPServerExample(t *testing.T) {

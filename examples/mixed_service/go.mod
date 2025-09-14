@@ -1,10 +1,10 @@
-module github.com/arsheenali/gracewrap/examples/mixed_service
+module github.com/imran31415/gracewrap/examples/mixed_service
 
 go 1.21
 
-replace github.com/arsheenali/gracewrap => ../..
+replace github.com/imran31415/gracewrap => ../..
 
-require github.com/arsheenali/gracewrap v0.0.0-00010101000000-000000000000
+require github.com/imran31415/gracewrap v0.0.0-00010101000000-000000000000
 
 require (
 	github.com/beorn7/perks v1.0.1 // indirect

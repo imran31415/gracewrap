@@ -21,16 +21,15 @@ func (g *Graceful) shutdown() {
 
 		// 1. Mark as not ready to stop new traffic
 		g.setReady(false)
-		g.logger.Printf("Marked as not ready; stopping new connections")
+		g.logger.Printf("Marked as not ready; health checks will now return 503")
 
-		// 2. Close all listeners to stop accepting new connections
-		for _, listener := range g.listeners {
-			if err := listener.Close(); err != nil {
-				g.logger.Printf("Error closing listener: %v", err)
-			}
+		// 2. Wait for load balancers/service mesh to notice readiness change
+		if g.config.LoadBalancerDelay > 0 {
+			g.logger.Printf("Waiting %v for load balancers to stop routing traffic...", g.config.LoadBalancerDelay)
+			time.Sleep(g.config.LoadBalancerDelay)
 		}
 
-		// 3. Graceful shutdown with timeout
+		// 3. Graceful shutdown with timeout (HTTP servers will close their own listeners)
 		drainDeadline := time.Now().Add(g.config.DrainTimeout)
 		g.gracefulShutdown(drainDeadline)
 

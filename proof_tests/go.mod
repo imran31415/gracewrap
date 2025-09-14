@@ -1,8 +1,8 @@
-module github.com/imran31415/gracewrap/examples/http_server
+module github.com/imran31415/gracewrap/proof_tests
 
 go 1.21
 
-replace github.com/imran31415/gracewrap => ../..
+replace github.com/imran31415/gracewrap => ..
 
 require github.com/imran31415/gracewrap v0.0.0-00010101000000-000000000000
 

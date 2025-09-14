@@ -63,7 +63,7 @@ func TestHTTPMiddlewareInflight(t *testing.T) {
 		inHandler.Done()
 		// simulate some work
 		time.Sleep(50 * time.Millisecond)
-		io.WriteString(w, "ok")
+		_, _ = io.WriteString(w, "ok")
 	})
 
 	rr := httptest.NewRecorder()

@@ -83,6 +83,33 @@ proof: ## Run proof test that demonstrates GraceWrap prevents request failures
 	cd proof_tests && go test -v -run TestKubernetesInFlightRequestProof
 	@echo "✅ Proof test completed - check proof_tests/results/ for output"
 
+# Prometheus demo
+demo-metrics: ## Run interactive Prometheus metrics demonstration
+	@echo "🎯 Starting Prometheus metrics demonstration..."
+	@echo "📖 See demo/README.md for full instructions"
+	cd demo && ./metrics_demo.sh
+
+demo-server-graceful: ## Start demo server with GraceWrap and metrics
+	@echo "🛡️ Starting graceful demo server with Prometheus metrics..."
+	cd demo/server && go run prometheus_demo.go graceful
+
+demo-server-normal: ## Start demo server without GraceWrap (no metrics)
+	@echo "⚡ Starting normal demo server (no graceful shutdown)..."
+	cd demo/server && go run prometheus_demo.go normal
+
+demo-load-light: ## Generate light load for metrics demo
+	cd demo/loadgen && go run load_generator.go light
+
+demo-load-heavy: ## Generate heavy load for metrics demo
+	cd demo/loadgen && go run load_generator.go heavy
+
+demo-monitoring: ## Start Prometheus + Grafana monitoring stack
+	@echo "📊 Starting Prometheus + Grafana monitoring stack..."
+	cd demo && docker-compose up -d
+	@echo "✅ Monitoring stack started:"
+	@echo "   Grafana: http://localhost:3000 (admin/admin)"
+	@echo "   Prometheus: http://localhost:9090"
+
 # Install development tools
 install-tools: ## Install development tools
 	go install github.com/golangci/golangci-lint/cmd/golangci-lint@latest

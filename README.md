@@ -241,16 +241,23 @@ See the `examples/` directory for complete working examples:
 
 ## 🧪 Proof of Value
 
-Prove GraceWrap prevents request failures with our definitive test:
-
+### Statistical Proof
 ```bash
 # Run the proof test that shows GraceWrap prevents request failures
 make proof
 ```
-
 **Results**: Without GraceWrap: 5-94% of requests killed (depending on processing time) | With GraceWrap: 0% killed
 
-See **[proof_tests/PROOF_OF_VALUE.md](proof_tests/PROOF_OF_VALUE.md)** for detailed results and analysis.
+### Visual Proof with Prometheus Metrics
+```bash
+# Start server with metrics
+make demo-server-graceful
+
+# Generate load and trigger shutdown to see clean metrics
+make demo-load-heavy
+```
+
+See **[proof_tests/PROOF_OF_VALUE.md](proof_tests/PROOF_OF_VALUE.md)** for detailed results and **[demo/README.md](demo/README.md)** for Prometheus demonstration.
 
 ## 🤝 Contributing
 

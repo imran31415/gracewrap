@@ -2,7 +2,6 @@ package gracewrap
 
 import (
 	"bytes"
-	"context"
 	"io"
 	"net"
 	"net/http"
@@ -74,19 +73,6 @@ func TestHTTPMiddlewareInflight(t *testing.T) {
 	if rr.Code != http.StatusOK {
 		t.Fatalf("expected 200, got %d", rr.Code)
 	}
-}
-
-// fakeHTTPServer implements just Shutdown used by shutdown.go
-type fakeHTTPServer struct {
-	shutdownCalled int
-	mu             sync.Mutex
-}
-
-func (f *fakeHTTPServer) Shutdown(ctx context.Context) error {
-	f.mu.Lock()
-	defer f.mu.Unlock()
-	f.shutdownCalled++
-	return nil
 }
 
 // fakeListener to satisfy Close

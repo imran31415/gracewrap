@@ -24,7 +24,7 @@ func TestMixedServiceExample(t *testing.T) {
 	// HTTP service setup (like in main)
 	httpMux := http.NewServeMux()
 	httpMux.HandleFunc("/api/status", func(w http.ResponseWriter, r *http.Request) {
-		w.Write([]byte(`{"status": "ok"}`))
+		_, _ = w.Write([]byte(`{"status": "ok"}`))
 	})
 
 	httpServer := &http.Server{

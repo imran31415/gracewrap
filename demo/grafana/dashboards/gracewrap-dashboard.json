@@ -1,5 +1,4 @@
 {
-  "dashboard": {
     "id": null,
     "title": "GraceWrap Graceful Shutdown Metrics",
     "tags": ["gracewrap", "kubernetes", "graceful-shutdown"],
@@ -127,5 +126,4 @@
     },
     "refresh": "5s",
     "version": 1
-  }
 }

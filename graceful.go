@@ -204,7 +204,7 @@ func (g *Graceful) HealthHandler() http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		if g.Ready() {
 			w.WriteHeader(http.StatusOK)
-			w.Write([]byte("ready\n"))
+			_, _ = w.Write([]byte("ready\n"))
 		} else {
 			http.Error(w, "draining", http.StatusServiceUnavailable)
 		}
@@ -216,7 +216,7 @@ func (g *Graceful) HealthHandler() http.Handler {
 func (g *Graceful) LivenessHandler() http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(http.StatusOK)
-		w.Write([]byte("alive\n"))
+		_, _ = w.Write([]byte("alive\n"))
 	})
 }
 

@@ -24,11 +24,11 @@ func TestHTTPServerExample(t *testing.T) {
 	// Create the same server as in main()
 	mux := http.NewServeMux()
 	mux.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		w.Write([]byte("Hello from your service!\n"))
+		_, _ = w.Write([]byte("Hello from your service!\n"))
 	})
 	mux.HandleFunc("/slow", func(w http.ResponseWriter, r *http.Request) {
 		// Don't actually sleep in test
-		w.Write([]byte("Slow request completed!\n"))
+		_, _ = w.Write([]byte("Slow request completed!\n"))
 	})
 
 	server := &http.Server{

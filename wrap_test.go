@@ -11,7 +11,9 @@ func TestWrapHTTP_StartsAndShutdowns(t *testing.T) {
 	g := New(nil)
 
 	mux := http.NewServeMux()
-	mux.HandleFunc("/ok", func(w http.ResponseWriter, r *http.Request) { w.Write([]byte("ok")) })
+	mux.HandleFunc("/ok", func(w http.ResponseWriter, r *http.Request) {
+		_, _ = w.Write([]byte("ok"))
+	})
 	srv := &http.Server{Addr: ":0", Handler: mux}
 
 	if err := g.WrapHTTP(srv); err != nil {
@@ -24,6 +26,6 @@ func TestWrapHTTP_StartsAndShutdowns(t *testing.T) {
 	// Trigger shutdown quickly
 	ctx, cancel := context.WithTimeout(context.Background(), time.Second)
 	defer cancel()
-	go g.Wait(ctx)
+	go func() { _ = g.Wait(ctx) }()
 	g.Shutdown()
 }

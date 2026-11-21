@@ -1,22 +1,15 @@
 package gracewrap
 
 import (
-	"os"
 	"testing"
 	"time"
 )
 
 func TestConfigFromEnv(t *testing.T) {
-	os.Setenv("DRAIN_TIMEOUT_SECONDS", "2")
-	os.Setenv("HARD_STOP_TIMEOUT_SECONDS", "1")
-	os.Setenv("LOAD_BALANCER_DELAY_SECONDS", "3")
-	os.Setenv("ENABLE_METRICS", "true")
-	t.Cleanup(func() {
-		os.Unsetenv("DRAIN_TIMEOUT_SECONDS")
-		os.Unsetenv("HARD_STOP_TIMEOUT_SECONDS")
-		os.Unsetenv("LOAD_BALANCER_DELAY_SECONDS")
-		os.Unsetenv("ENABLE_METRICS")
-	})
+	t.Setenv("DRAIN_TIMEOUT_SECONDS", "2")
+	t.Setenv("HARD_STOP_TIMEOUT_SECONDS", "1")
+	t.Setenv("LOAD_BALANCER_DELAY_SECONDS", "3")
+	t.Setenv("ENABLE_METRICS", "true")
 
 	cfg := ConfigFromEnv()
 	if cfg.DrainTimeout != 2*time.Second {

@@ -32,7 +32,7 @@ func TestWrapGRPC_StartsAndShutdowns(t *testing.T) {
 	if err != nil {
 		t.Fatalf("listen: %v", err)
 	}
-	defer ln.Close()
+	defer func() { _ = ln.Close() }()
 
 	s := grpc.NewServer()
 	if err := g.WrapGRPC(s, ln); err != nil {

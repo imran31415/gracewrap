@@ -4,9 +4,9 @@
 [![Build Status](https://github.com/imran31415/gracewrap/workflows/CI/badge.svg)](https://github.com/imran31415/gracewrap/actions)
 [![codecov](https://codecov.io/gh/imran31415/gracewrap/branch/main/graph/badge.svg)](https://codecov.io/gh/imran31415/gracewrap)
 [![Go Report Card](https://goreportcard.com/badge/github.com/imran31415/gracewrap)](https://goreportcard.com/report/github.com/imran31415/gracewrap)
-[![GoDoc](https://godoc.org/github.com/imran31415/gracewrap?status.svg)](https://godoc.org/github.com/imran31415/gracewrap)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Release](https://img.shields.io/github/release/imran31415/gracewrap.svg)](https://github.com/imran31415/gracewrap/releases)
+[![Release](https://img.shields.io/github/v/release/imran31415/gracewrap?sort=semver)](https://github.com/imran31415/gracewrap/releases)
+[![Go Reference](https://pkg.go.dev/badge/github.com/imran31415/gracewrap.svg)](https://pkg.go.dev/github.com/imran31415/gracewrap)
 
 A Go library for adding graceful shutdown capabilities to your existing HTTP and gRPC services. Perfect for Kubernetes deployments where you need to handle pod termination and rolling updates gracefully.
 
@@ -45,9 +45,13 @@ GraceWrap implements proper Kubernetes pod lifecycle management:
 
 ## 📦 Installation
 
+Requires Go 1.26 or newer.
+
 ```bash
-go get github.com/imran31415/gracewrap
+go get github.com/imran31415/gracewrap@latest
 ```
+
+Pin a specific release with `@vX.Y.Z` (see [Releases](https://github.com/imran31415/gracewrap/releases) and [CHANGELOG.md](CHANGELOG.md)). The project follows semantic versioning; maintainers, see [RELEASING.md](RELEASING.md) for how versions are cut.
 
 ## 🚀 Quick Start
 

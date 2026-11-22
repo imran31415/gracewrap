@@ -45,3 +45,11 @@ temp/
 .env
 .env.local
 .env.*.local
+
+# Built example/demo binaries (go build output)
+/demo/load_generator
+/demo/loadgen/load_generator
+/demo/server/prometheus_demo
+/examples/grpc_server/grpc_server
+/examples/http_server/http_server
+/examples/mixed_service/mixed_service

@@ -1,0 +1,105 @@
+name: Release
+
+# Publishes a version of the gracewrap module.
+#
+# Two ways in (see RELEASING.md):
+#   1. Push a semver tag:            git push origin v0.2.0   (or: make release VERSION=v0.2.0)
+#   2. Run this workflow by hand:    Actions -> Release -> Run workflow -> version: v0.2.0
+#      (tags the current tip of main for you)
+#
+# Either way the version must already have a "## [X.Y.Z]" section in CHANGELOG.md on main;
+# that section becomes the GitHub Release notes.
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version to release, e.g. v0.2.0 (tags the tip of main)'
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: release
+  cancel-in-progress: false
+
+jobs:
+  release:
+    name: Release
+    runs-on: ubuntu-latest
+    env:
+      TAG: ${{ github.event_name == 'workflow_dispatch' && inputs.version || github.ref_name }}
+
+    steps:
+    - uses: actions/checkout@v7
+      with:
+        # Full history + tags so we can check the tag is on main.
+        fetch-depth: 0
+        ref: ${{ github.event_name == 'workflow_dispatch' && 'main' || github.ref }}
+
+    - name: Set up Go
+      uses: actions/setup-go@v7
+      with:
+        go-version-file: go.mod
+        cache-dependency-path: '**/go.sum'
+
+    - name: Validate version
+      run: scripts/release.sh check "$TAG"
+
+    - name: Verify tag points at main
+      if: github.event_name == 'push'
+      run: |
+        git fetch origin main
+        if ! git merge-base --is-ancestor "$TAG" origin/main; then
+          echo "::error::$TAG is not on main. Releases must be cut from main."
+          exit 1
+        fi
+
+    - name: Vet and test
+      run: |
+        go mod verify
+        go vet ./...
+        go test -race ./...
+        for d in examples/http_server examples/grpc_server examples/mixed_service; do
+          (cd "$d" && go build -o /dev/null .)
+        done
+
+    - name: Vulnerability check
+      run: go run golang.org/x/vuln/cmd/govulncheck@latest ./...
+
+    - name: Create tag (manual run only)
+      if: github.event_name == 'workflow_dispatch'
+      run: |
+        git config user.name  "github-actions[bot]"
+        git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+        git tag -a "$TAG" -m "gracewrap $TAG"
+        git push origin "$TAG"
+
+    - name: Create GitHub Release
+      env:
+        GH_TOKEN: ${{ github.token }}
+      run: |
+        scripts/release.sh notes "$TAG" > release-notes.md
+        cat release-notes.md
+        flags=()
+        [[ "$TAG" == *-* ]] && flags+=(--prerelease)
+        gh release create "$TAG" --verify-tag --title "$TAG" --notes-file release-notes.md "${flags[@]}"
+
+    - name: Publish to the Go module proxy
+      # Fetching the version through proxy.golang.org caches it there and gets
+      # pkg.go.dev to index it, so `go get ...@$TAG` works right away.
+      run: |
+        mod=$(go list -m)
+        for _ in 1 2 3 4 5; do
+          if curl -fsS "https://proxy.golang.org/${mod}/@v/${TAG}.info"; then
+            echo; echo "Published: https://pkg.go.dev/${mod}@${TAG}"
+            exit 0
+          fi
+          sleep 15
+        done
+        echo "::warning::proxy.golang.org has not picked up $TAG yet; it will on the first go get."

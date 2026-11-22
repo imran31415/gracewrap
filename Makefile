@@ -1,6 +1,6 @@
 # Makefile for gracewrap
 
-.PHONY: help test test-race test-short coverage build clean lint fmt vet examples ci-test
+.PHONY: help test test-race test-short coverage build clean lint fmt vet examples ci-test release-prepare release
 
 # Default target
 help: ## Show this help message
@@ -117,3 +117,12 @@ install-tools: ## Install development tools
 # Check for vulnerabilities
 vuln-check: ## Check for known vulnerabilities
 	go run golang.org/x/vuln/cmd/govulncheck@latest ./...
+
+# Releases (see RELEASING.md)
+release-prepare: ## Cut CHANGELOG "Unreleased" into a version on a release branch: make release-prepare VERSION=v0.2.0
+	@test -n "$(VERSION)" || (echo "usage: make release-prepare VERSION=vX.Y.Z" && exit 1)
+	scripts/release.sh prepare $(VERSION)
+
+release: ## Tag main and push it, which triggers the Release workflow: make release VERSION=v0.2.0
+	@test -n "$(VERSION)" || (echo "usage: make release VERSION=vX.Y.Z" && exit 1)
+	scripts/release.sh tag $(VERSION)

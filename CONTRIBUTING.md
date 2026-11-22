@@ -19,7 +19,10 @@ We use GitHub to host code, to track issues and feature requests, as well as acc
 3. If you've changed APIs, update the documentation.
 4. Ensure the test suite passes.
 5. Make sure your code lints.
-6. Issue that pull request!
+6. Add a line for user-facing changes under `## [Unreleased]` in [CHANGELOG.md](CHANGELOG.md).
+7. Issue that pull request!
+
+Releases are cut by maintainers from `main`. See [RELEASING.md](RELEASING.md).
 
 ### Development Setup
 

@@ -25,6 +25,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Comprehensive test suite (91%+ coverage)
 - Race condition testing
 - CI/CD pipeline with GitHub Actions
+- Tag-driven release workflow that publishes GitHub Releases and the Go module proxy (see RELEASING.md)
 - Examples for HTTP, gRPC, and mixed services
 
 ### Features
@@ -48,12 +49,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Testing documentation
 
 ### Dependencies
-- Go 1.21+ support
+- Go 1.26+
 - Prometheus client library
 - gRPC library
 - No external runtime dependencies for core functionality
-
-## [0.1.0] - 2024-XX-XX
-
-### Added
-- Initial release
